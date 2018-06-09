@@ -37,7 +37,7 @@ namespace FIX
     const int FIX50_LastField = ExchangeSpecialInstructions;
     const int NormalMin = 1;
     const int NormalMax = 4999;
-    const int UserMin = 5000;
+    const int UserMin = 0;
     const int UserMax = 9999;
     const int InternalMin = 10000;
   }
