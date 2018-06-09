@@ -7,5 +7,11 @@ compiler:
 before_script:
  - sudo apt-get install libxml2-dev
  - ./bootstrap
+ - mkdir build
+ - pushd build
+ - cmake ..
+ - popd
 
-script: ./configure && make && make check
+script:
+ - ./configure && make && make check
+ - cmake --build build
