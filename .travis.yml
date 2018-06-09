@@ -3,7 +3,9 @@ language: cpp
 compiler:
  - gcc
  - clang
-
+env:
+  - BUILD_SYSTEM=gnu
+  - BUILD_SYSTEM=cmake
 before_script:
  - sudo apt-get install libxml2-dev
  - ./bootstrap
@@ -13,5 +15,4 @@ before_script:
  - popd
 
 script:
- - ./configure && make && make check
- - cmake --build build
+ - if [ "$BUILD_SYSTEM" == "gnu" ]; then ./configure && make && make check; elif [ "$BUILD_SYSTEM" == "cmake" ]; then cmake --build build; fi

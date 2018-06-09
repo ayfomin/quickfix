@@ -47,6 +47,7 @@ macro(FIND_UNIQUE_PTR)
   unset(HAVE_STD_MEMORY_HEADER CACHE)
   unset(HAVE_UNIQUE_PTR_IN_STD_NAMESPACE CACHE)
   set(FIND_UNIQUE_PTR FALSE)
+  set(CMAKE_REQUIRED_FLAGS -std=c++11)
   check_include_file_cxx(memory HAVE_STD_MEMORY_HEADER)
   if (HAVE_STD_MEMORY_HEADER)
     # Finding the memory header doesn't mean that shared_ptr is in std

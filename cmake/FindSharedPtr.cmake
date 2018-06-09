@@ -48,6 +48,7 @@ macro(FIND_SHARED_PTR)
   unset(HAVE_TR1_MEMORY_HEADER CACHE)
   unset(HAVE_SHARED_PTR_IN_TR1_NAMESPACE_FROM_TR1_MEMORY_HEADER CACHE)
   set(SHARED_PTR_FOUND FALSE)
+  set(CMAKE_REQUIRED_FLAGS -std=c++11)
   check_include_file_cxx(memory HAVE_STD_MEMORY_HEADER)
   if (HAVE_STD_MEMORY_HEADER)
     # Finding the memory header doesn't mean that shared_ptr is in std
